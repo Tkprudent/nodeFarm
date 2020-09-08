@@ -1,49 +1,12 @@
-# Course Material and FAQ for my Complete Node.js, Express and MongoDB Bootcamp
+In this project I will apply the skills and knowledge which was acquired throughout the Cloud DevOps Nanodegree program. These include:
 
-This repo contains starter files and the finished project files for all the projects contained in the course (complete repo size is **288MB**).
+As a capstone project, I will be deploying a web application titled **NODE FARM** which is just a simple application that helps to give a detailed information of my favorite natural fruits. The project was gotten from an udemy course I took and can be found at [Node.js, Express, MongoDB & More: The Complete Bootcamp 2020](https://www.udemy.com/course/nodejs-express-mongodb-bootcamp/). CI/CD pipeline for micro services applications with rolling deployment will be developed. 
 
-Plus, I made all the [course slides available for download](theory-lectures.pdf), to make it easier to follow along the theory videos.
+Several Continuous Integration steps will be developed which include typographical checking (aka “linting”). To make my project stand out, you may also choose to implement other checks such as security scanning and performance testing.
 
-👇 **_Please read the following Frequently Asked Questions (FAQ) carefully before starting the course_** 👇
+Once I completed the Continuous Integration I set up Continuous Deployment, which will include:
 
-## FAQ
-
-### Q1: How do I download the files?
-
-**A:** If you're new to GitHub and just want to download the complete package, hit the green button saying "Clone or download", choose the "Download ZIP" option, and you're good to go.
-
-### Q2: I'm stuck in one of the projects. Where do I get help?
-
-**A:** Have you extensively tried fixing the problem on your own? If you failed at fixing it, please **post a detailled description of the problem to the Q&A area of that video over at Udemy**, along with a [codepen](https://codepen.io/pen/) containing your code. You will get help as fast as possible! Please don't send me a personal message or email to fix coding problems.
-
-### Q3: What VSCode theme are you using?
-
-**A:** I use Oceanic Next (dimmed bg) for all my coding and course production. [Here is my complete VSCode setup](vscode-setup.md).
-
-### Q4: Can I see a final version of the course projects?
-
-**A:** Absolutely! The main project is [Natours](https://www.natours.dev/) (it even got its own domain 😎). You can log in with `laura@example.com` and password `test1234`. There is also an API at `/api`, with [documentation available here](https://documenter.getpostman.com/view/4237486/S1LwxnaE?version=latest) (incomplete). The small Node.js introduction project is [Node Farm](https://node-farm.herokuapp.com/).
-
-### Q5: Videos don't load, can you fix it?
-
-**A:** Unfortunately, there is nothing I can do about it. The course is hosted on Udemy's platform, and sometimes they have technical issues like this one. Please just come back a bit later or [contact their support team](https://support.udemy.com/hc/en-us).
-
-### Q6: Videos are blurred / have low quality, can you fix it?
-
-**A:** Please open video settings and change the quality from 'Auto' to another value, for example 720p. If that doesn't help, please [contact the Udemy support team](https://support.udemy.com/hc/en-us).
-
-### Q7: Are the videos downloadable?
-
-**A:** Yes, I made all videos downloadable on the Udemy platform so you can learn even without an internet connection. To download a video, use the settings icon in the right bottom corner of the video player.
-
-### Q8: I love your courses and want to get updates on new courses. How?
-
-**A:** First, you can subscribe to my email list [at my website](http://codingheroes.io/newsletter). Plus, I make important announcements on twitter [@jonasschmedtman](https://twitter.com/jonasschmedtman), so you should definitely follow me there 🔥
-
-### Q9: How do I get my certificate of completion?
-
-**A:** A certificate of completion is provided by Udemy after you complete 100% of the course. After completing the course, just click on the "Your progress" indicator in the top right-hand corner of the course page. If you want to change your name on the certificate, please [contact the Udemy support team](https://support.udemy.com/hc/en-us).
-
-### Q10: Do you accept pull requests?
-
-**A:** No, for the simple reason that I want this repository to contain the _exact_ same code that is shown in the videos. However, please feel free to add an issue if you found one.
+* Pushing the built Docker container(s) to the Docker repository (using AWS ECR, I create my own custom Registry within my cluster, or another 3rd party Docker repository) ; and
+* Deploying these Docker container(s) to a small Kubernetes cluster. 
+* For my Kubernetes cluster I use AWS Kubernetes as a Service, or build your own Kubernetes cluster. 
+* To deploy your Kubernetes cluster, use either Ansible or Cloudformation. Preferably, run these from within Jenkins as an independent pipeline.
