@@ -34,8 +34,8 @@ pipeline {
         }
         stage('Update Kube Config'){
             steps {
-                withAWS(region:'us-west-2',credentials:'aws') {
-                    sh 'sudo aws eks --region us-west-2 update-kubeconfig --name udacity-project'                    
+                withAWS(region:'us-east-1',credentials:'udacity-cloudDevops-capstone') {
+                    sh 'sudo aws eks --region us-east-1 update-kubeconfig --name udacity-cloudDevops'                    
                 }
             }
         }
@@ -43,8 +43,8 @@ pipeline {
             steps {
                 sh '''
                     export IMAGE="$registry:$BUILD_NUMBER"
-                    sed -ie "s~IMAGE~$IMAGE~g" kubernetes/container.yml
-                    sudo kubectl apply -f ./kubernetes
+                    sed -ie "s~IMAGE~$IMAGE~g" kubernetes-resources/deployment.yml
+                    sudo kubectl apply -f ./kubernetes-resources
                     '''
             }
         }
