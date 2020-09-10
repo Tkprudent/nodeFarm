@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: udacity-cloudDevops-deployment
   labels:
-    app: udacity-cloudDevops-capstone
+    app: udacitycloudDevops
 spec:
   strategy:
     type: RollingUpdate
@@ -13,14 +13,14 @@ spec:
   replicas: 4
   selector:
     matchLabels:
-      app: udacity-cloudDevops-capstone
+      app: udacitycloudDevops
   template:
     metadata:
       labels:
-        app: udacity-cloudDevops-capstone
+        app: udacitycloudDevops
     spec:
       containers:
-        - name: udacity-cloudDevops-capstone
+        - name: udacitycloudDevops
           imagePullPolicy: Always
           image: IMAGE
           ports:
