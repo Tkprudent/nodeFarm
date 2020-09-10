@@ -1,0 +1,35 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: udacity-cloudDevops-deployment
+  labels:
+    app: udacity-cloudDevops-capstone
+spec:
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+        maxUnavailable: 50%
+        maxSurge: 1
+  replicas: 4
+  selector:
+    matchLabels:
+      app: udacity-cloudDevops-capstone
+  template:
+    metadata:
+      labels:
+        app: udacity-cloudDevops-capstone
+    spec:
+      containers:
+        - name: udacity-cloudDevops-capstone
+          imagePullPolicy: Always
+          image: IMAGE
+          ports:
+            - containerPort: 8000
+          readinessProbe:
+              httpGet:
+                path: /
+                port: 8000
+              periodSeconds: 10
+              timeoutSeconds: 5
+              successThreshold: 1
+              failureThreshold: 10
