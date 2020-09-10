@@ -1,7 +1,7 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: udacity-cloudDevops-deployment
+  name: udacitycloudDevops
   labels:
     app: udacitycloudDevops
 spec:
