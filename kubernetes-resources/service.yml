@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: udacitycloudDevopsLoadBalancer
+  name: udacity-cloud-devops-loadbalancer
 spec:
   type: LoadBalancer
   selector:
-    app: udacitycloudDevops
+    app: udacity-cloud-devops
   ports:
     - port: 80
       targetPort: 8000

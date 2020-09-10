@@ -1,9 +1,9 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: udacitycloudDevops
+  name: udacity-cloud-devops
   labels:
-    app: udacitycloudDevops
+    app: udacity-cloud-devops
 spec:
   strategy:
     type: RollingUpdate
@@ -13,14 +13,14 @@ spec:
   replicas: 4
   selector:
     matchLabels:
-      app: udacitycloudDevops
+      app: udacity-cloud-devops
   template:
     metadata:
       labels:
-        app: udacitycloudDevops
+        app: udacity-cloud-devops
     spec:
       containers:
-        - name: udacitycloudDevops
+        - name: udacity-cloud-devops
           imagePullPolicy: Always
           image: IMAGE
           ports:
